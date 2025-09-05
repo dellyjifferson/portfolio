@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jean Jifferson Delly — Portfolio</title>
+  <meta name="description" content="Portfolio of Jean Jifferson Delly — Robotics, AI, Embedded Systems." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font (system fallback) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app" class="theme-root">
+    <header class="topbar">
+      <div class="brand">
+        <a href="#home">Djee<span class="dot">.</span></a>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="home" class="section hero">
+        <div class="hero-content">
+          <div class="intro-left">
+            <h1 class="name">Jean Jifferson Delly</h1>
+            <p class="role">Robotics · Embedded Systems · AI</p>
+            <p class="typewriter" aria-live="polite"><span id="typed"></span><span class="cursor">|</span></p>
+
+            <div class="hero-actions">
+              <a class="btn" href="#projects">See projects</a>
+              <a class="btn ghost" href="#contact">Contact me</a>
+            </div>
+          </div>
+          <div class="intro-right">
+            <div class="device-card">
+              <div class="board-glow"></div>
+              <svg class="circuit" viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <linearGradient id="g1" x1="0" x2="1">
+                    <stop offset="0" stop-color="var(--accent)"/>
+                    <stop offset="1" stop-color="transparent"/>
+                  </linearGradient>
+                </defs>
+                <path d="M10 120 L80 80 L150 120 L190 60" fill="none" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+                <!-- decorative -->
+              </svg>
+              <div class="device-caption">Embedded go-kart controller concept</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section about">
+        <div class="container">
+          <h2>About</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>I'm a computer science student at ESIH and robotics enthusiast from Haiti. I am passionnated about embedded systems, prototype robotics projects, and explore computer vision and AI. I love turning ideas into working hardware + software.</p>
+              <ul>
+                <li>Interested in H-M integration, sensors, and control systems, artificial intelligence, robotics.</li>
+                <li>Strong in C, C++, Python, HTML/CSS.</li>
+                <li>Currently working on an off-road electric go-kart with intelligent features.</li>
+              </ul>
+            </div>
+            <div class="about-stats">
+              <div class="stat">
+                <div class="num">6+</div><div class="label">Personal Projects</div>
+              </div>
+              <div class="stat">
+                <div class="num">1</div><div class="label">Embedded Prototypes</div>
+              </div>
+              <div class="stat">
+                <div class="num">1</div><div class="label">Startup</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="projects-grid">
+            <!-- Project card example -->
+            <article class="project-card">
+              <div class="pc-media" style="background-image:url('go-kart.png');"></div>
+              <div class="pc-body">
+                <h3>Off-road Smart Go-kart</h3>
+                <p>Embedded controller, motor drivers, CAN bus sensors, and basic autonomy (obstacle avoidance).</p>
+                <div class="pc-tags"><span>Embedded</span><span>Robotics</span><span>Control</span></div>
+                <div class="pc-links">
+                  <a href="#" target="_blank" rel="noopener">Live</a>
+                  <a href="#" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="pc-media" style="background-image:url('c-v.png');"></div>
+              <div class="pc-body">
+                <h3>Computer Vision Demo</h3>
+                <p>OpenCV pipeline for object detection and tracking used in small robot projects.</p>
+                <div class="pc-tags"><span>CV</span><span>Python</span></div>
+                <div class="pc-links">
+                  <a href="#" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="pc-media" style="background-image:url('deeplowlab.png');"></div>
+              <div class="pc-body">
+                <h3>DeepLow Lab</h3>
+                <p>Brand new laboratory for low level programming, hardware exploration and robots development.</p>
+                <div class="pc-tags"><span>C/C++</span><span>Python</span> <span>Hardware</span></div>
+                <div class="pc-links">
+                  <a href="#" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- add more project cards as you like -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill">
+              <h4>Languages</h4>
+              <p>C, C++, Python, JavaScript, HTML, CSS</p>
+            </div>
+            <div class="skill">
+              <h4>Embedded Systems</h4>
+              <p>Arduino, STM32, RTOS basics, sensors, motor control, Embedded C</p>
+            </div>
+            <div class="skill">
+              <h4>AI & Computer Vision</h4>
+              <p>OpenCV, basic ML models, computer vision pipelines</p>
+            </div>
+            <div class="skill">
+              <h4>Tools</h4>
+              <p>Git, Linux, VSCode, Vim</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-grid">
+            <div class="contact-info">
+              <p>Want to work together or ask about a project? Send a message — I usually reply within a few days.</p>
+              <ul>
+                <li><strong>Location:</strong> Port-au-Prince, Haiti</li>
+                <li><strong>Email:</strong> <a href="mailto:dellyjifferson509@gmail.com">dellyjifferson509@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/dellyjifferson" target="_blank" rel="noopener">github.com/dellyjifferson</a></li>
+              </ul>
+            </div>
+
+            <form id="contact-form" class="contact-form" autocomplete="on">
+              <label>
+                <span>Name</span>
+                <input type="text" name="from_name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="reply_to" required />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="6" required></textarea>
+              </label>
+              <div class="form-actions">
+                <button type="submit" class="btn">Send message</button>
+                <div id="form-status" role="status" aria-live="polite"></div>
+              </div>
+              <p class="note">If JS fails you can <a id="mailto-fallback" href="#">send email</a> directly.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year"></span> Jean Jifferson Delly — Built with ❤️ & circuits</small>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js" defer></script>
+  <!-- EmailJS SDK (client-side) -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</body>
+</html>
+
