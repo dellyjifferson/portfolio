@@ -423,6 +423,12 @@ body {
     display: block;
     z-index: 101;
     /* Ensure above other elements if needed, though nav is z-100 */
+    transition: opacity 0.2s ease;
+  }
+
+  .hamburger[aria-expanded="true"] {
+    opacity: 0;
+    pointer-events: none;
   }
 
   /* Close button inside nav */
