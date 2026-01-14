@@ -48,13 +48,40 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(nowIsLight ? 'dark' : 'light');
   });
 
-  // mobile menu toggle (simple)
+  // mobile menu toggle (full screen overlay)
   const menuBtn = $('#menu-toggle');
-  menuBtn && menuBtn.addEventListener('click', () => {
-    const nav = document.querySelector('.nav');
-    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', String(!expanded));
-    nav.style.display = expanded ? '' : 'flex';
+  const nav = $('.nav');
+  const closeBtn = $('.nav-close-btn');
+
+  function closeMenu() {
+    nav.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = ''; // restore scrolling
+  }
+
+  function openMenu() {
+    nav.classList.add('active');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // lock scrolling
+  }
+
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) closeMenu();
+      else openMenu();
+    });
+  }
+
+  // close button inside menu
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
+  }
+
+  // auto-close when a link is clicked
+  const navLinks = $$('.nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
   // Smooth offset for internal links (to account for sticky header)
