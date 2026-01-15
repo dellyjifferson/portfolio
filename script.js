@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   let idx = 0, char = 0;
   const typed = $('#typed');
-  function typeLoop(){
+  function typeLoop() {
     const text = lines[idx];
-    if (char <= text.length){
-      typed.textContent = text.slice(0,char);
+    if (char <= text.length) {
+      typed.textContent = text.slice(0, char);
       char++;
       setTimeout(typeLoop, 40);
     } else {
       setTimeout(() => {
-        char = 0; idx = (idx+1) % lines.length;
+        char = 0; idx = (idx + 1) % lines.length;
         setTimeout(typeLoop, 800);
       }, 1000);
     }
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // apply saved theme or dark by default
   const saved = localStorage.getItem('theme');
   if (saved === 'light') root.classList.add('light');
-  function setTheme(t){
-    if (t === 'light'){ root.classList.add('light'); themeToggle.textContent = '🌞'; localStorage.setItem('theme','light'); }
-    else { root.classList.remove('light'); themeToggle.textContent = '🌙'; localStorage.setItem('theme','dark'); }
+  function setTheme(t) {
+    if (t === 'light') { root.classList.add('light'); themeToggle.textContent = '🌞'; localStorage.setItem('theme', 'light'); }
+    else { root.classList.remove('light'); themeToggle.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
   }
   // initial button label
   setTheme(saved === 'light' ? 'light' : 'dark');
@@ -55,12 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeMenu() {
     nav.classList.remove('active');
+    document.body.classList.remove('menu-open'); // remove blur class
     menuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = ''; // restore scrolling
   }
 
   function openMenu() {
     nav.classList.add('active');
+    document.body.classList.add('menu-open'); // add blur class
     menuBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden'; // lock scrolling
   }

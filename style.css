@@ -444,4 +444,16 @@ body {
     cursor: pointer;
     line-height: 1;
   }
+
+  /* Content blur effect */
+  body.menu-open main,
+  body.menu-open .footer {
+    filter: blur(8px);
+    transition: filter 0.4s ease;
+  }
+
+  main,
+  .footer {
+    transition: filter 0.4s ease;
+  }
 }
