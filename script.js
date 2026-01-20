@@ -140,5 +140,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mq.matches) {
     document.querySelectorAll('.cursor').forEach(n => n.style.display = 'none');
   }
+
+  // Back to top button logic
+  const backToTopBtn = $('#back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
 
