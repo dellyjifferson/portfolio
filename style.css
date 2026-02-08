@@ -1,23 +1,28 @@
 :root {
   --bg: #0b0f14;
+  --bg-end: #071018;
   --panel: #0f1720;
   --muted: #99a0a6;
   --text: #e6eef7;
   --accent: #4de0ff;
   --accent-2: #7b61ff;
   --glass: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.05);
   --radius: 12px;
   --fw-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --fw-mono: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
 }
 
 :root.light {
-  --bg: #f7fbff;
-  --panel: #ffffff;
-  --muted: #6b7280;
-  --text: #0b1220;
-  --accent: #0066ff;
-  --accent-2: #0ea5a3;
-  --glass: rgba(0, 0, 0, 0.03);
+  --bg: #f8fafc;
+  --bg-end: #ffffff;
+  --panel: rgba(255, 255, 255, 0.65);
+  --muted: #64748b;
+  --text: #0f172a;
+  --accent: #2563eb;
+  --accent-2: #0891b2;
+  --glass: rgba(255, 255, 255, 0.4);
+  --border: rgba(0, 0, 0, 0.06);
 }
 
 * {
@@ -31,13 +36,26 @@ body {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, var(--bg), #071018 100%);
+  background: linear-gradient(180deg, var(--bg), var(--bg-end));
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--fw-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   line-height: 1.45;
+
+  /* Tech grid pattern */
+  background-image:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-end) 100%),
+    radial-gradient(var(--muted) 0.5px, transparent 0.5px);
+  background-size: 100% 100%, 24px 24px;
+  background-blend-mode: normal, overlay;
+}
+
+:root.light body {
+  background-blend-mode: normal, multiply;
+  /* Better visibility in light mode */
 }
 
 /* Topbar */
@@ -262,13 +280,14 @@ body {
 
 .project-card {
   background: var(--panel);
+  backdrop-filter: blur(12px);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform .22s ease, box-shadow .22s ease;
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
 }
 
 .project-card:hover {
@@ -295,11 +314,13 @@ body {
   gap: 8px;
   margin-top: 8px;
   font-size: 0.85rem;
-  color: var(--muted)
+  color: var(--muted);
+  font-family: var(--fw-mono);
 }
 
 .pc-tags span {
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--glass);
+  border: 1px solid var(--border);
   padding: 6px 8px;
   border-radius: 8px;
 }
