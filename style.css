@@ -249,6 +249,12 @@ body {
   pointer-events: none;
 }
 
+.minibot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .device-caption {
   position: absolute;
   bottom: 10px;
