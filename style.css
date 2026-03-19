@@ -392,6 +392,10 @@ body {
   color: var(--accent-2);
 }
 
+.contact-icon.whatsapp svg {
+  color: #25d366;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -413,10 +417,27 @@ body {
   margin-top: 6px;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
   background: transparent;
   color: var(--text);
   outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 22%, transparent);
+}
+
+:root.light .contact-form input,
+:root.light .contact-form textarea {
+  border-color: rgba(15, 23, 42, 0.22);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+:root.light .contact-form input::placeholder,
+:root.light .contact-form textarea::placeholder {
+  color: rgba(51, 65, 85, 0.8);
 }
 
 .form-actions {
