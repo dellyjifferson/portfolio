@@ -115,12 +115,44 @@ body {
 }
 
 #theme-toggle {
+  width: 40px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 6px 8px;
+  border: 1px solid var(--border);
+  padding: 0;
   border-radius: 8px;
   cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#theme-toggle:hover,
+#theme-toggle:focus-visible {
+  transform: translateY(-1px);
+  border-color: color-mix(in oklab, var(--accent) 45%, transparent);
+  box-shadow: 0 8px 20px color-mix(in oklab, var(--accent) 24%, transparent);
+  outline: none;
+}
+
+.theme-icon {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+:root.light .theme-icon-sun {
+  display: block;
+}
+
+:root.light .theme-icon-moon {
+  display: none;
 }
 
 .hamburger {

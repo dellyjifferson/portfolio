@@ -38,8 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('theme');
   if (saved === 'light') root.classList.add('light');
   function setTheme(t) {
-    if (t === 'light') { root.classList.add('light'); themeToggle.textContent = '🌞'; localStorage.setItem('theme', 'light'); }
-    else { root.classList.remove('light'); themeToggle.textContent = '🌙'; localStorage.setItem('theme', 'dark'); }
+    if (t === 'light') {
+      root.classList.add('light');
+      themeToggle.setAttribute('aria-label', 'Activate dark mode');
+      themeToggle.setAttribute('title', 'Activate dark mode');
+      localStorage.setItem('theme', 'light');
+    }
+    else {
+      root.classList.remove('light');
+      themeToggle.setAttribute('aria-label', 'Activate light mode');
+      themeToggle.setAttribute('title', 'Activate light mode');
+      localStorage.setItem('theme', 'dark');
+    }
   }
   // initial button label
   setTheme(saved === 'light' ? 'light' : 'dark');
