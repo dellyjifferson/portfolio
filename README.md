@@ -19,17 +19,23 @@ I'm a computer science student at **ESIH** and a robotics enthusiast from **Hait
 *   Python
 *   JavaScript
 *   HTML / CSS
+*   PHP
 
 ### Embedded Systems
-*   Arduino, STM32
+*   Arduino, ESP32
 *   RTOS basics
 *   Sensors & Motor Control
 *   Embedded C
+*   ROS2 (Jazzy)
 
 ### AI & Computer Vision
 *   OpenCV
 *   Basic ML Models
 *   Computer Vision Pipelines
+
+### Databases
+*   MySQL
+*   SQLite
 
 ### Tools
 *   Git, Linux, VSCode, Vim
@@ -40,7 +46,9 @@ Here are a few highlights from my portfolio:
 
 *   **Off-road Smart Go-kart**: An embedded controller project featuring motor drivers, CAN bus sensors, and basic autonomy (obstacle avoidance).
 *   **Computer Vision Demo**: An OpenCV pipeline designed for object detection and tracking, used in small robot projects.
-*   **DeepLow Lab**: A space dedicated to low-level programming, hardware exploration, and robot development.
+*   **DeepLow Lab**: A startup dedicated to low-level programming, software development, hardware exploration, and robot development.
+*   **Green Production**: A project promoting sustainable agriculture and food production in Haiti, focused on producing natural food and livestock.
+*   **Reorientation Core Group**: A sustainability initiative that repurposes used tires into useful products instead of discarding or burning them.
 
 ##  Running Locally
 
