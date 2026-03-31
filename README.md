@@ -38,7 +38,7 @@ I'm a computer science student at **ESIH** and a robotics enthusiast from **Hait
 *   SQLite
 
 ### Tools
-*   Git, Linux, VSCode, Vim
+*   Git, Linux, VSCode, Vim, Arduino IDE
 
 ##  Featured Projects
 
