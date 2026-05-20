@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Jean Jifferson Delly</title>
+  <meta name="description" content="Blog by Jean Jifferson Delly — Stories about Robotics, AI, Embedded Systems, and Tech.">
+  <meta name="keywords" content="blog, Jean Jifferson Delly, robotics, embedded systems, AI, computer science, Haiti">
+  <meta name="author" content="Jean Jifferson Delly">
+  <link rel="canonical" href="https://dellyjifferson.github.io/portfolio/blog/"/>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dellyjifferson.github.io/portfolio/blog/">
+  <meta property="og:title" content="Blog — Jean Jifferson Delly">
+  <meta property="og:description" content="Blog by Jean Jifferson Delly — Stories about Robotics, AI, Embedded Systems, and Tech.">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dellyjifferson.github.io/portfolio/blog/">
+  <meta property="twitter:title" content="Blog — Jean Jifferson Delly">
+  <meta property="twitter:description" content="Blog by Jean Jifferson Delly — Stories about Robotics, AI, Embedded Systems, and Tech.">
+  
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+  <!-- Font (system fallback) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="theme-root">
+    <header class="topbar">
+      <div class="brand">
+        <a href="../">Djee<span class="dot">.</span></a>
+      </div>
+      <nav class="nav">
+        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
+        <a href="../#home">Portfolio</a>
+        <a href="../#about">About</a>
+        <a href="../#projects">Projects</a>
+        <a href="../#skills">Skills</a>
+        <a href="./">Blog</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Activate light mode" title="Activate light mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- BLOG HEADER -->
+      <section id="blog-hero" class="section blog-hero">
+        <div class="container">
+          <h1 class="blog-title">Blog</h1>
+          <p class="blog-subtitle">Thoughts on Robotics, Embedded Systems, AI, and Tech.</p>
+        </div>
+      </section>
+
+      <!-- ARTICLES -->
+      <section id="articles" class="section blog-articles">
+        <div class="container">
+          <div class="articles-grid" id="articles-grid">
+            <!-- Articles will be displayed here -->
+            <div class="no-articles">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="empty-icon">
+                <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                <circle cx="19" cy="5" r="1" fill="currentColor" />
+              </svg>
+              <h3>No articles yet</h3>
+              <p>Coming soon! I'm working on my first blog post.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SUBSCRIBE CTA -->
+      <section id="blog-cta" class="section blog-cta">
+        <div class="container">
+          <div class="cta-card">
+            <h2>Stay Updated</h2>
+            <p>Get notified when new articles are posted. No spam, just insights on robotics and tech.</p>
+            <div class="cta-input-group">
+              <input type="email" placeholder="your@email.com" aria-label="Email address for newsletter" />
+              <button class="btn">Notify Me</button>
+            </div>
+            <p class="cta-note">Feature coming soon — for now, follow my <a href="../#contact">contact links</a> to stay connected.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>© <span id="year"></span> Jean Jifferson Delly — Built with passion & circuits</small>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top"></button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>
