@@ -428,6 +428,10 @@ body {
   color: #25d366;
 }
 
+.contact-icon.instagram svg {
+  color: #e4405f;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
