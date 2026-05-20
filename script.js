@@ -5,31 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const $$ = sel => document.querySelectorAll(sel);
 
   // typed intro
-  const lines = [
-    'I make robots move.',
-    'I write embedded firmware.',
-    'I build prototypes that solve problems.',
-    'I love hardware + code.'
-  ];
-  let idx = 0, char = 0;
   const typed = $('#typed');
-  function typeLoop() {
-    const text = lines[idx];
-    if (char <= text.length) {
-      typed.textContent = text.slice(0, char);
-      char++;
-      setTimeout(typeLoop, 40);
-    } else {
-      setTimeout(() => {
-        char = 0; idx = (idx + 1) % lines.length;
-        setTimeout(typeLoop, 800);
-      }, 1000);
+  if (typed) {
+    const lines = [
+      'I make robots move.',
+      'I write embedded firmware.',
+      'I build prototypes that solve problems.',
+      'I love hardware + code.'
+    ];
+    let idx = 0, char = 0;
+    function typeLoop() {
+      const text = lines[idx];
+      if (char <= text.length) {
+        typed.textContent = text.slice(0, char);
+        char++;
+        setTimeout(typeLoop, 40);
+      } else {
+        setTimeout(() => {
+          char = 0; idx = (idx + 1) % lines.length;
+          setTimeout(typeLoop, 800);
+        }, 1000);
+      }
     }
+    typeLoop();
   }
-  typeLoop();
 
   // year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Theme toggle
   const root = document.documentElement;
@@ -117,8 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const mailtoFallback = document.getElementById('mailto-fallback');
 
   // populate mailto fallback dynamically
-  const fallbackEmail = 'dellyjifferson509@gmail.com';
-  mailtoFallback.href = `mailto:${fallbackEmail}`;
+  if (mailtoFallback) {
+    const fallbackEmail = 'dellyjifferson509@gmail.com';
+    mailtoFallback.href = `mailto:${fallbackEmail}`;
+  }
 
   // initialize EmailJS - you'll replace the ID
   try {
