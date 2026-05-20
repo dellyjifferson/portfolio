@@ -139,8 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceID = 'service_hg8euie';    // replace
     const templateID = 'template_3qoj5vp';  // replace
 
-    // Use emailjs.sendForm for convenience
-    emailjs.sendForm(serviceID, templateID, CONTACT_FORM)
+    const formData = new FormData(CONTACT_FORM);
+    const submittedAt = new Date().toLocaleString();
+    const templateParams = {
+      name: formData.get('from_name') || '',
+      email: formData.get('reply_to') || '',
+      message: formData.get('message') || '',
+      time: submittedAt
+    };
+
+    // Send values that match the template placeholders exactly.
+    emailjs.send(serviceID, templateID, templateParams)
       .then(() => {
         statusEl.textContent = 'Message sent — thank you!';
         CONTACT_FORM.reset();
