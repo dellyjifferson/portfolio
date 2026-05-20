@@ -127,7 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // initialize EmailJS - you'll replace the ID
   try {
-    emailjs.init('UaHSZwyiWyOWbwvrk'); // <-- replace with your EmailJS user ID
+    emailjs.init({
+      publicKey: 'UaHSZwyiWyOWbwvrk'
+    });
   } catch (err) {
     // emailjs not loaded or init error
     console.warn('EmailJS init error', err);
@@ -155,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         CONTACT_FORM.reset();
       }, (err) => {
         console.error('EmailJS error', err);
-        statusEl.textContent = 'Failed to send. You can use the mailto link below.';
+        const details = err && (err.text || err.message) ? ` (${err.text || err.message})` : '';
+        statusEl.textContent = `Failed to send${details}. You can use the mailto link below.`;
       });
   });
 
