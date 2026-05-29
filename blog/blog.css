@@ -508,6 +508,12 @@
 
   .article-hero {
     padding-top: 24px;
+    padding-inline: 18px;
+  }
+
+  .article-shell {
+    padding-inline: 18px;
+    padding-bottom: 56px;
   }
 
   .article-panel {
