@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Embedded System: Right move? - Jean Jifferson Delly</title>
+  <meta name="description" content="A personal draft about why embedded systems matter to me, how they compare with general-purpose computing systems, and how I started learning the topic.">
+  <meta name="keywords" content="embedded systems, computing systems, robotics, Jean Jifferson Delly, hardware, microcontrollers, engineering">
+  <meta name="author" content="Jean Jifferson Delly">
+  <link rel="canonical" href="https://dellyjifferson.engineer/blog/embedded-system-right-move/" />
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dellyjifferson.engineer/blog/embedded-system-right-move/">
+  <meta property="og:title" content="Embedded System: Right move?">
+  <meta property="og:description" content="A personal draft about why embedded systems matter to me, how they compare with general-purpose computing systems, and how I started learning the topic.">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dellyjifferson.engineer/blog/embedded-system-right-move/">
+  <meta property="twitter:title" content="Embedded System: Right move?">
+  <meta property="twitter:description" content="A personal draft about why embedded systems matter to me, how they compare with general-purpose computing systems, and how I started learning the topic.">
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon_io/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="theme-root">
+    <header class="topbar">
+      <div class="brand">
+        <a href="../../">Djee<span class="dot">.</span></a>
+      </div>
+      <nav class="nav">
+        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
+        <a href="../../">Home</a>
+        <a href="../../#about">About</a>
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../">Blog</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Activate light mode" title="Activate light mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="article-page">
+      <section class="article-hero">
+        <div class="container article-hero-inner">
+          <a class="article-back-link" href="../">Back to blog <-</a>
+          <div class="article-kicker">Embedded systems</div>
+          <h1 class="article-heading">Embedded System: Right move?</h1>
+          <p class="article-intro">
+            I started thinking seriously about embedded systems because I kept running into the same pattern: I wanted to build things
+            that interact with the real world, not just software that stays on a screen. This draft explains why that path matters to me,
+            how embedded systems differ from general-purpose computing systems, and how I began building practical knowledge around the topic.
+          </p>
+          <div class="article-meta-row" aria-label="Article metadata">
+            <span class="article-chip">June 13, 2026</span>
+            <span class="article-chip">Draft</span>
+            <span class="article-chip">Embedded systems</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-shell">
+        <div class="article-panel">
+          <article class="article-content">
+            <figure class="article-figure">
+              <img class="article-feature-image" src="../../images/embedded_system_certification.png" alt="Certificate for Master Embedded Systems: Challenges and Concepts completed by Jean Jifferson Delly" />
+              <figcaption class="article-figure-caption">
+                This is a certification image I earned while learning embedded systems. It is a small milestone, but it marks one of the moments that pushed me to take the topic more seriously.
+              </figcaption>
+            </figure>
+
+            <section class="article-section">
+              <h2>Why this topic caught my attention</h2>
+              <p>
+                My interest in embedded systems did not start from theory alone. It came from wanting to understand the devices and
+                machines around me at a deeper level. When I look at robots, sensors, controllers, or even simple hardware projects,
+                I do not just see components. I see a system that has to sense, decide, and act in the physical world.
+              </p>
+              <p>
+                That is why embedded systems feel important to me as a robotic enthusiast. They connect software to hardware in a way that is practical,
+                constrained, and very close to reality.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>What embedded systems are</h2>
+              <p>
+                An embedded system is a computer built to do a specific job inside a larger product. Unlike a laptop or desktop,
+                it is usually designed around one function, tight constraints, and a predictable environment. That can mean a sensor node,
+                a motor controller, a smart appliance, a wearable device, or the electronics inside a robot.
+              </p>
+              <p>
+                The important part is not just that it runs code. It is that the code must work with hardware, timing, power, memory,
+                and physical inputs at the same time. That is what makes the field interesting and sometimes difficult.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>Embedded systems vs computing systems</h2>
+              <p>
+                A general-purpose computing system is built to serve many tasks. It is flexible by design, and users can change
+                what it does almost every day. An embedded system is narrower. It is built to be reliable, efficient, and often invisible.
+              </p>
+              <ul class="article-list">
+                <li>Computing systems optimize for flexibility and broad software support.</li>
+                <li>Embedded systems optimize for task-specific behavior, timing, and control.</li>
+                <li>Computing systems can usually afford more memory and power.</li>
+                <li>Embedded systems often work under strict limits and real-world conditions.</li>
+              </ul>
+              <p>
+                That difference matters because the engineering mindset changes. In embedded work, I am not only thinking about code.
+                I am also thinking about sensors, actuators, communication buses, power budgets, and the physical system around the software.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>Why the challenges matter to me</h2>
+              <p>
+                Embedded systems matter because they force me to connect theory with reality. Limited processing power, memory pressure,
+                noisy inputs, hardware bugs, and timing issues can all shape the final result. That is frustrating at times, but it is also
+                what makes the work meaningful.
+              </p>
+              <p>
+                I like the fact that embedded systems are honest. If something is wrong, the problem usually shows up in the behavior of
+                the physical system. That pushes me to slow down, debug carefully, and understand the whole chain from software to hardware.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>How I started learning</h2>
+              <p>
+                I started learning by combining structured study with small experiments. Courses gave me the vocabulary and the concepts,
+                but hands-on work is what made the ideas stick.
+              </p>
+              <ul class="article-list">
+                <li>I studied online material to understand terminology, architecture, and tradeoffs. Specially on <a href="https://alison.com">Alison</a> and <a href="https://coursera.org">Coursera</a></li>
+                <li>I read documentation, articles and datasheets to see how components behave in practice.</li>
+                <li>I tried small projects with microcontrollers, sensors, and control logic.</li>
+                <li>I debugged code and wiring together, because both usually matter at the same time.</li>
+                <li>I compared embedded behavior with the general-purpose systems I already knew from computer science.</li>
+              </ul>
+              <p>
+                One thing I want to add later is more detail about my first real experiments and the problems that forced me to learn faster.
+                That is where the story becomes mine, not just a definition of the field.
+              </p>
+            </section>
+
+            <section class="article-closer">
+              <p>
+                Embedded systems feel like the right move to me because they sit at the intersection of software, hardware, and purpose.
+                That combination keeps pulling me forward, and I expect this series to grow as I keep learning.
+              </p>
+              <div class="article-footer-nav">
+                <a href="../">See all articles</a>
+                <a href="../../#contact">Contact me</a>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Jean Jifferson Delly - Built with passion & circuits</small>
+      </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top"></button>
+  </div>
+
+  <script src="../../script.js" defer></script>
+</body>
+
+</html>
