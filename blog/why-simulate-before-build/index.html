@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Why You Should Simulate Before You Build - Jean Jifferson Delly</title>
+  <meta name="description" content="Why robot simulation is a powerful way to learn and build, with lessons from our SmartFactory robotic welding project in CoppeliaSim.">
+  <meta name="keywords" content="robotics, simulation, CoppeliaSim, Python, welding cell, SmartFactory, industrial robotics">
+  <meta name="author" content="Jean Jifferson Delly">
+  <link rel="canonical" href="https://dellyjifferson.engineer/blog/why-simulate-before-build/" />
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dellyjifferson.engineer/blog/why-simulate-before-build/">
+  <meta property="og:title" content="Why You Should Simulate Before You Build">
+  <meta property="og:description" content="Lessons from a real robotics project: simulation first, faster learning, safer iteration, and stronger results.">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dellyjifferson.engineer/blog/why-simulate-before-build/">
+  <meta property="twitter:title" content="Why You Should Simulate Before You Build">
+  <meta property="twitter:description" content="Lessons from a real robotics project: simulation first, faster learning, safer iteration, and stronger results.">
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon_io/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="theme-root">
+    <header class="topbar">
+      <div class="brand">
+        <a href="../../">Djee<span class="dot">.</span></a>
+      </div>
+      <nav class="nav">
+        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
+        <a href="../../">Home</a>
+        <a href="../../#about">About</a>
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../">Blog</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Activate light mode" title="Activate light mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="article-page">
+      <section class="article-hero">
+        <div class="container article-hero-inner">
+          <a class="article-back-link" href="../">Back to blog <-</a>
+          <div class="article-kicker">Robotics simulation</div>
+          <h1 class="article-heading">Why You Should Simulate Before You Build: Lessons from a Real Robotics Project</h1>
+          <p class="article-intro">
+            Simulation is not a shortcut. It is one of the fastest ways to learn robotics safely, iterate with less cost, and arrive at stronger real-world results. In this article, I share practical lessons from SmartFactory, a complete simulated robotic welding cell built in CoppeliaSim.
+          </p>
+          <div class="article-meta-row" aria-label="Article metadata">
+            <span class="article-chip">June 27, 2026</span>
+            <span class="article-chip">10 min read</span>
+            <span class="article-chip">Robotics</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-shell">
+        <div class="article-panel">
+          <article class="article-content">
+            <section class="article-section">
+              <h2>First things first: what is robot simulation?</h2>
+              <p>
+                A robot simulator is a software environment that recreates a robot and its surroundings with enough physical accuracy to test your real control logic. This is different from 3D animation. Animation replays predefined motion. Simulation reacts to commands, collisions, trajectories, and timing constraints.
+              </p>
+              <p>
+                In practice, simulation lets you test motion planning, inverse kinematics, scene setup, and quality checks before touching expensive hardware.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>Why simulation changes how you learn robotics</h2>
+              <ul class="article-list">
+                <li>Safety: dangerous trajectories can be tested without risking hardware or people.</li>
+                <li>Cost: most expensive mistakes happen in software, not on physical equipment.</li>
+                <li>Speed: your iterate-debug-run cycle is much faster than full hardware resets.</li>
+                <li>Repeatability: same initial conditions help isolate software issues quickly.</li>
+                <li>Accessibility: you can build strong robotics skills from a laptop.</li>
+              </ul>
+              <div class="article-callout">
+                <p>
+                  Simulation is your starting point, not your finish line. The goal is to remove most uncertainty before final tuning on real hardware.
+                </p>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <h2>The tool I use: CoppeliaSim</h2>
+              <p>
+                For this project, we used CoppeliaSim with the ZMQ Remote API for Python. It gives access to real robot models, integrated inverse kinematics workflows, and practical scene management.
+              </p>
+              <p>
+                The Python client is straightforward:
+              </p>
+              <pre class="article-code-block"><code>pip install coppeliasim-zmqremoteapi-client</code></pre>
+              <pre class="article-code-block"><code>from coppeliasim_zmqremoteapi_client import RemoteAPIClient
+
+client = RemoteAPIClient()
+sim = client.require('sim')
+robot = sim.getObject('/your_robot_name')
+print('Connected! Handle:', robot)</code></pre>
+            </section>
+
+            <section class="article-section">
+              <h2>SmartFactory: our robotic welding cell project</h2>
+              <p>
+                For a certification project at EIC from Harts Community, our team ARCMIND ROBOTICS built SmartFactory: a simulated robotic welding cell. The robot follows a seam between two pieces, checks point-level accuracy, traces a visible weld path, and generates a quality report at the end of each cycle.
+              </p>
+              <p>
+                Team modules were developed in parallel using a shared data contract:
+              </p>
+              <ul class="article-list">
+                <li>Angie: AI trajectory generation from piece geometry.</li>
+                <li>Louis: Python controller for arm movement and command flow.</li>
+                <li>Raphaella: quality checker and cycle report logic.</li>
+                <li>Me: simulation scene design and object structure in CoppeliaSim.</li>
+              </ul>
+            </section>
+
+            <figure class="article-figure">
+              <img class="article-feature-image" src="../../images/coppeliaSim_scence.png" alt="Full CoppeliaSim SmartFactory scene with ABB robot, table, and metal plates" />
+              <figcaption class="article-figure-caption">
+                Full SmartFactory simulation scene: ABB robot in HOME position, industrial table, and welding workpieces.
+              </figcaption>
+            </figure>
+
+            <section class="article-section">
+              <h2>Scene structure and object naming</h2>
+              <p>
+                Clean scene naming made integration faster. Our Python modules referenced deterministic object paths, which reduced debugging friction across teammates.
+              </p>
+              <pre class="article-code-block"><code>robot  = sim.getObject('/ABB')
+tip    = sim.getObject('/ABB/tip')
+target = sim.getObject('/ABB/target')
+table  = sim.getObject('/table')
+piece1 = sim.getObject('/piece1')
+piece2 = sim.getObject('/piece2')</code></pre>
+            </section>
+
+            <figure class="article-figure">
+              <img class="article-feature-image" src="../../images/coppeliaSim_scence.png" alt="Close view of SmartFactory welding pieces and seam path in CoppeliaSim" />
+              <figcaption class="article-figure-caption">
+                Scene close-up: the welding seam area used by the trajectory and quality-check modules.
+              </figcaption>
+            </figure>
+
+            <section class="article-section">
+              <h2>Results from a full simulated cycle</h2>
+              <p>
+                After integrating all modules, the cycle validated 11 weld points with no anomalies.
+              </p>
+            </section>
+
+            <figure class="article-figure">
+              <img class="article-feature-image" src="../../images/coppeliaSim_terminal_output.png" alt="Terminal output showing SmartFactory weld point checks and cycle result" />
+              <figcaption class="article-figure-caption">
+                Terminal output from a full run: weld-point validation and cycle status.
+              </figcaption>
+            </figure>
+
+            <section class="article-section">
+              <p>
+                Generated quality report:
+              </p>
+              <pre class="article-code-block"><code>{
+  "timestamp": "2026-06-21 11:40:54",
+  "total_points": 11,
+  "points_ok": 11,
+  "anomalies": 0,
+  "taux_qualite_pct": 100.0,
+  "ecart_max_m": 2.6e-05,
+  "seuil_m": 0.012,
+  "verdict": "CYCLE OK"
+}</code></pre>
+              <p>
+                Key outcome summary:
+              </p>
+              <ul class="article-list">
+                <li>11 weld points verified.</li>
+                <li>0 anomalies detected.</li>
+                <li>100% quality score.</li>
+                <li>Maximum error around 0.026 mm under a 12 mm threshold.</li>
+              </ul>
+              <p>
+                Project repository: <a href="https://github.com/dellyjifferson/Smart_Factory" target="_blank" rel="noopener noreferrer">https://github.com/dellyjifferson/Smart_Factory</a>
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>What this taught me</h2>
+              <ul class="article-list">
+                <li>Name objects consistently from day one.</li>
+                <li>Use inverse kinematics as a productivity multiplier.</li>
+                <li>Define data contracts early for parallel team execution.</li>
+                <li>Use simulation metrics to quantify quality and precision.</li>
+                <li>Treat sim-to-real as an expected gap to tune, not a blocker.</li>
+              </ul>
+            </section>
+
+            <section class="article-closer">
+              <p>
+                Simulation is not about avoiding real hardware. It is about arriving to real hardware with better logic, fewer surprises, and higher confidence. SmartFactory showed us that a small focused team can produce industrial-style workflow quality in a virtual environment, then carry those practices forward.
+              </p>
+              <div class="article-footer-nav">
+                <a href="../">See all articles</a>
+                <a href="../../#contact">Contact me</a>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Jean Jifferson Delly - Built with passion & circuits</small>
+      </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top"></button>
+  </div>
+
+  <script src="../../script.js" defer></script>
+</body>
+
+</html>

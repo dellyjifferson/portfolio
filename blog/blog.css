@@ -481,6 +481,23 @@
   line-height: 1.75;
 }
 
+.article-code-block {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--panel) 86%, black 14%);
+  color: var(--text);
+  overflow-x: auto;
+}
+
+.article-code-block code {
+  font-family: var(--fw-mono);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  white-space: pre;
+}
+
 .article-callout {
   padding: 20px 22px;
   border-left: 3px solid var(--accent);
