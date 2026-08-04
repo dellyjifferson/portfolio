@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>What Courses Matter for Robotics - Jean Jifferson Delly</title>
+  <meta name="description" content="A practical guide to the courses, subjects, and learning order that actually help you start in robotics.">
+  <meta name="keywords" content="robotics, courses, linear algebra, control systems, ROS 2, embedded systems, Jean Jifferson Delly">
+  <meta name="author" content="Jean Jifferson Delly">
+  <link rel="canonical" href="https://dellyjifferson.engineer/blog/what-courses-matter-for-robotics/" />
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://dellyjifferson.engineer/blog/what-courses-matter-for-robotics/">
+  <meta property="og:title" content="What Courses Matter for Robotics">
+  <meta property="og:description" content="A practical guide to the courses, subjects, and learning order that actually help you start in robotics.">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://dellyjifferson.engineer/blog/what-courses-matter-for-robotics/">
+  <meta property="twitter:title" content="What Courses Matter for Robotics">
+  <meta property="twitter:description" content="A practical guide to the courses, subjects, and learning order that actually help you start in robotics.">
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon_io/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app" class="theme-root">
+    <header class="topbar">
+      <div class="brand">
+        <a href="../../">Djee<span class="dot">.</span></a>
+      </div>
+      <nav class="nav">
+        <button class="nav-close-btn" aria-label="Close menu">&times;</button>
+        <a href="../../">Home</a>
+        <a href="../../#about">About</a>
+        <a href="../../#projects">Projects</a>
+        <a href="../../#skills">Skills</a>
+        <a href="../">Blog</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button id="theme-toggle" aria-label="Activate light mode" title="Activate light mode">
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 1 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.9" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="article-page">
+      <section class="article-hero">
+        <div class="container article-hero-inner">
+          <a class="article-back-link" href="../">Back to blog <-</a>
+          <div class="article-kicker">Robotics course guide</div>
+          <h1 class="article-heading">What Courses Matter for Robotics</h1>
+          <p class="article-intro">
+            If you are trying to figure out which classes actually move you toward robotics, the answer is less about a single degree and more about building the right stack: math, programming, electronics, control, simulation, and real projects.
+          </p>
+          <div class="article-meta-row" aria-label="Article metadata">
+            <span class="article-chip">August 4, 2026</span>
+            <span class="article-chip">12 min read</span>
+            <span class="article-chip">Robotics</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-shell">
+        <div class="article-panel">
+          <article class="article-content">
+            <section class="article-section">
+              <h2>There is no single robotics degree</h2>
+              <p>
+                Robotics sits at the intersection of mechanical, electrical, and computer engineering. That sounds obvious, but the practical lesson is more useful: you do not need every track at once to start, and there is no single correct entry point.
+              </p>
+              <p>
+                What matters is which layer of the robot you want to own first. Mechanical engineering focuses on motion and structure, electrical and embedded work focus on sensors, actuators, and power, and computer science focuses on software, perception, and planning.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>The math and physics courses you cannot skip</h2>
+              <p>
+                Robotics math is not abstract. It shows up in code, debugging, and the behavior of your system.
+              </p>
+              <ul class="article-list">
+                <li>Linear algebra for rotation matrices, transformation frames, and Jacobians.</li>
+                <li>Calculus and differential equations for motion, velocity, and acceleration.</li>
+                <li>Physics and dynamics for torque, inertia, and friction.</li>
+                <li>Probability and statistics for sensor noise, filtering, and localization.</li>
+              </ul>
+              <div class="article-callout">
+                <p>
+                  A robotics bug often looks like a software issue, but the real cause is usually a math or physics assumption that no longer matches the hardware.
+                </p>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <h2>Programming: learn both C/C++ and Python</h2>
+              <p>
+                Robotics rewards people who can move between fast prototyping and low-level control.
+              </p>
+              <ul class="article-list">
+                <li>C/C++ for microcontrollers, firmware, and timing-sensitive control loops.</li>
+                <li>Python for prototyping, ROS 2 nodes, data analysis, and quick experimentation.</li>
+              </ul>
+              <p>
+                If you only learn one, you eventually hit a wall. You need one language that gets you close to the hardware and one that lets you explore ideas quickly.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>The course that changes everything: control systems</h2>
+              <p>
+                Control systems is where you learn PID control, feedback loops, stability, and transfer functions. It is the discipline that explains why a robot behaves well or oscillates itself apart.
+              </p>
+              <p>
+                Whether you are working on a robotic arm, a balance bot, or a drone, control theory is not optional. It is one of the clearest signals that you are moving from programming projects into robotics engineering.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>Electronics, embedded systems, and hardware</h2>
+              <p>
+                To get past tutorials, you need real exposure to circuits, sensors, actuators, and microcontrollers. Arduino and ESP32 projects are good starting points because they make the hardware/software boundary visible quickly.
+              </p>
+              <ul class="article-list">
+                <li>Basic electronics for wiring, power, and signal behavior.</li>
+                <li>Microcontrollers for reading sensors and driving motors.</li>
+                <li>Embedded systems for learning how software behaves under real timing constraints.</li>
+              </ul>
+            </section>
+
+            <section class="article-section">
+              <h2>Simulation and ROS 2</h2>
+              <p>
+                Learn ROS 2 and learn a simulator before you spend serious money on hardware. ROS 2 gives you the communication model that shows up across modern robotics work, while simulators such as Gazebo or CoppeliaSim let you fail cheaply and repeatably.
+              </p>
+              <p>
+                Simulation is useful because it removes uncertainty before you tune on real hardware. That makes debugging faster and your understanding deeper.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>AI and computer vision come later</h2>
+              <p>
+                AI and machine learning matter in robotics, especially for perception, SLAM, and navigation. But they work best when the foundation underneath them already makes sense.
+              </p>
+              <p>
+                A model that predicts an action is not useful if the control system cannot execute it cleanly or the sensor data is too noisy to trust.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <h2>A practical learning order</h2>
+              <ol class="article-list">
+                <li>Start with linear algebra, calculus, basic physics, and Python.</li>
+                <li>Add C/C++ once you are comfortable writing programs that solve problems.</li>
+                <li>Learn electronics and build a few microcontroller projects.</li>
+                <li>Study control systems and PID with a physical project in mind.</li>
+                <li>Move into ROS 2 and simulation.</li>
+                <li>Then add AI, perception, or computer vision.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <h2>The part no course can replace</h2>
+              <p>
+                The biggest gap between reading about robotics and doing robotics is real hardware time. Projects force you to deal with noise, broken assumptions, and unexpected behavior.
+              </p>
+              <p>
+                A smart parking gate, an obstacle-avoidance robot, or a weather-station build can teach more than another online certificate if you actually debug what goes wrong.
+              </p>
+            </section>
+
+            <section class="article-closer">
+              <p>
+                If you are choosing courses right now, do not chase the most impressive title. Build the stack that lets you understand a robot as a system: math, programming, hardware, control, simulation, and then AI on top.
+              </p>
+              <div class="article-footer-nav">
+                <a href="../">See all articles</a>
+                <a href="../../#contact">Contact me</a>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <small>&copy; <span id="year"></span> Jean Jifferson Delly - Built with passion & circuits</small>
+      </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top"></button>
+  </div>
+
+  <script src="../../script.js" defer></script>
+</body>
+
+</html>
